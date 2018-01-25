@@ -1,8 +1,8 @@
 FROM phusion/baseimage:latest 
 COPY start.sh /start.sh
 RUN apt-get update && \
-    apt-get install python3-pip && \
+    apt-get install python3-pip  -y && \
     pip3 install --upgrade pip && \
-    pip3  install Django PyMySQL SQLAlchemy Django-crontab numpy pandas patsy webencodings wheel statsmodels
+    pip3  install -y Django PyMySQL SQLAlchemy Django-crontab numpy pandas patsy webencodings wheel statsmodels
 WORKDIR /app
 CMD ["sh", "/start.sh"]
